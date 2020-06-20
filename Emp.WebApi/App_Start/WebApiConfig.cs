@@ -14,9 +14,10 @@ namespace Emp.WebApi
 
             //configre WebApi  to  use token authentication 
 
-            config.SuppressDefaultHostAuthentication();
-            config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));  
+            //config.SuppressDefaultHostAuthentication();
+            //config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
 
+            config.Filters.Add(new ExcetionFilter());  
 
             // Web API routes
             config.MapHttpAttributeRoutes();

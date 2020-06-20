@@ -20,7 +20,6 @@ namespace Emp.WebApi.App_Start
 		   return container;
 	   });
 
-
 		public static IUnityContainer GetConfiguredContainer()
 		{
 			return container.Value;

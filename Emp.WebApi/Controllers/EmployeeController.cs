@@ -15,10 +15,10 @@ namespace Emp.WebApi.Controllers
 	{
 		private readonly EmployeeService _emplpyeeService = new EmployeeService();
 
-       [HttpPost]
+        [HttpPost]
+		[ExcetionFilter]
 		public IHttpActionResult AddEmp([FromBody]EmployeeModel employeeModel)
 		{
-
 			//Validate Model 
 			var employee = employeeModel.ToEntity();  
 			var result = _emplpyeeService.AddEmployee(employee);
@@ -27,6 +27,7 @@ namespace Emp.WebApi.Controllers
 		}
 
 		[HttpGet]
+		[ExcetionFilter]
 		public IHttpActionResult Get(DateTime hiringDate)
 		{
 
