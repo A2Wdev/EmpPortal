@@ -13,24 +13,24 @@ namespace Emp.WebApi.Controllers
 {
 	public class EmployeeController : ApiController
 	{
-
 		private readonly EmployeeService _emplpyeeService = new EmployeeService();
 
-	
-
        [HttpPost]
-		public IHttpActionResult AddEmp([FromBody] EmployeeModel employeeModel)
+		public IHttpActionResult AddEmp([FromBody]EmployeeModel employeeModel)
 		{
+
+			//Validate Model 
 			var employee = employeeModel.ToEntity();  
 			var result = _emplpyeeService.AddEmployee(employee);
 
-			return Ok();
+			return Ok(result);
 		}
 
 		[HttpGet]
-		public IHttpActionResult Get()
+		public IHttpActionResult Get(DateTime hiringDate)
 		{
-			var emp = _emplpyeeService.GetEmployeeByHiringDate(Convert.ToDateTime("2020-06-20 01:48:20.847"));
+
+			var emp = _emplpyeeService.GetEmployeeByHiringDate(hiringDate);
 
 			return Ok(emp);  
 		
