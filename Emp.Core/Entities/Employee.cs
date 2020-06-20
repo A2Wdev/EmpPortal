@@ -9,7 +9,7 @@ namespace Emp.Core
 {
 	public class Employee
 	{
-
+		
 		public Guid EmployeeId { get; private set; }
 
 		[StringLength(100)]
@@ -19,6 +19,11 @@ namespace Emp.Core
 
 		public DateTime HiringDate { get; private set; }
 
+
+		public Employee()
+		{
+
+		}
 		public Employee(string name, int age, DateTime hiringDate)
 		{
 			Name = name;
